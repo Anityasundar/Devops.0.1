@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Employee Management</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>👨‍💻 Employee Management</h1>
+
+    <p>Three-Tier Docker Compose Application</p>
+
+</header>
+
+
+<main>
+
+    <section class="form-section">
+
+        <h2>➕ Add Employee</h2>
+
+        <form id="employeeForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Employee Name"
+                required
+            >
+
+            <input
+                type="text"
+                id="department"
+                placeholder="Department"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                required
+            >
+
+            <input
+                type="number"
+                id="salary"
+                placeholder="Salary"
+                required
+            >
+
+            <button type="submit">
+                Add Employee
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <section class="employee-section">
+
+        <div class="section-header">
+
+            <h2>👥 Employees</h2>
+
+            <button onclick="loadEmployees()">
+                🔄 Refresh
+            </button>
+
+        </div>
+
+
+        <div id="message"></div>
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Email</th>
+                    <th>Salary</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="employeeTable">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

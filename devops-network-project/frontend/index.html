@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Employee Management</title>
+
+```
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+```
+
+</head>
+
+<body>
+
+<div class="app">
+
+```
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+    <div class="logo">
+        <div class="logo-icon">⚡</div>
+        <div>
+            <h2>DevOpsHub</h2>
+            <span>Employee Platform</span>
+        </div>
+    </div>
+
+    <nav class="navigation">
+
+        <a href="#" class="nav-item active">
+            <span>📊</span>
+            Dashboard
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>👥</span>
+            Employees
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>🏢</span>
+            Departments
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>📈</span>
+            Analytics
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>⚙️</span>
+            Settings
+        </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+
+            <div>
+                <strong>System Online</strong>
+                <small>All services operational</small>
+            </div>
+        </div>
+
+        <div class="version">
+            v2.0.0 • DevOps Lab
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+
+        <div class="mobile-menu">
+            ☰
+        </div>
+
+        <div class="page-title">
+
+            <span class="breadcrumb">
+                DevOpsHub / Dashboard
+            </span>
+
+            <h1>Employee Dashboard</h1>
+
+        </div>
+
+        <div class="top-actions">
+
+            <button class="icon-button" id="themeToggle">
+                🌙
+            </button>
+
+            <button class="notification">
+                🔔
+                <span></span>
+            </button>
+
+            <div class="profile">
+
+                <div class="avatar">
+                    A
+                </div>
+
+                <div class="profile-info">
+                    <strong>Admin User</strong>
+                    <small>Administrator</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENT -->
+    <section class="content">
+
+        <!-- WELCOME -->
+        <div class="welcome">
+
+            <div>
+
+                <span class="welcome-label">
+                    GOOD MORNING 👋
+                </span>
+
+                <h2>Welcome back, Admin!</h2>
+
+                <p>
+                    Here's what's happening with your organization today.
+                </p>
+
+            </div>
+
+            <button class="primary-button" id="openEmployeeModal">
+                <span>＋</span>
+                Add Employee
+            </button>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-header">
+                    <div class="stat-icon purple">👥</div>
+
+                    <span class="trend positive">
+                        ↑ 12.5%
+                    </span>
+                </div>
+
+                <div class="stat-value" id="totalEmployees">
+                    128
+                </div>
+
+                <div class="stat-label">
+                    Total Employees
+                </div>
+
+                <div class="progress">
+                    <div style="width: 78%"></div>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-header">
+                    <div class="stat-icon blue">🏢</div>
+
+                    <span class="trend positive">
+                        ↑ 4.2%
+                    </span>
+                </div>
+
+                <div class="stat-value">
+                    8
+                </div>
+
+                <div class="stat-label">
+                    Departments
+                </div>
+
+                <div class="progress">
+                    <div style="width: 55%"></div>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-header">
+                    <div class="stat-icon green">✅</div>
+
+                    <span class="trend positive">
+                        ↑ 2.8%
+                    </span>
+                </div>
+
+                <div class="stat-value">
+                    119
+                </div>
+
+                <div class="stat-label">
+                    Active Employees
+                </div>
+
+                <div class="progress">
+                    <div style="width: 92%"></div>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-header">
+                    <div class="stat-icon orange">📅</div>
+
+                    <span class="trend neutral">
+                        This month
+                    </span>
+                </div>
+
+                <div class="stat-value">
+                    6
+                </div>
+
+                <div class="stat-label">
+                    New Employees
+                </div>
+
+                <div class="progress">
+                    <div style="width: 38%"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ANALYTICS -->
+        <div class="dashboard-grid">
+
+            <div class="panel chart-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>Employee Growth</h3>
+                        <p>Employee count over the last 6 months</p>
+                    </div>
+
+                    <select>
+                        <option>Last 6 months</option>
+                        <option>Last year</option>
+                    </select>
+
+                </div>
+
+                <div class="chart">
+
+                    <div class="chart-y">
+                        <span>150</span>
+                        <span>100</span>
+                        <span>50</span>
+                        <span>0</span>
+                    </div>
+
+                    <div class="chart-area">
+
+                        <div class="grid-line"></div>
+                        <div class="grid-line"></div>
+                        <div class="grid-line"></div>
+                        <div class="grid-line"></div>
+
+                        <svg viewBox="0 0 600 220" preserveAspectRatio="none">
+
+                            <defs>
+
+                                <linearGradient id="growthGradient"
+                                                x1="0"
+                                                x2="0"
+                                                y1="0"
+                                                y2="1">
+
+                                    <stop offset="0%" stop-opacity=".25"/>
+                                    <stop offset="100%" stop-opacity="0"/>
+
+                                </linearGradient>
+
+                            </defs>
+
+                            <path
+                                d="M0,170
+                                   C80,150 90,140 120,145
+                                   S180,120 220,125
+                                   S280,95 320,105
+                                   S380,80 420,90
+                                   S480,55 520,65
+                                   S570,35 600,45
+                                   L600,220
+                                   L0,220 Z"
+                                fill="url(#growthGradient)"
+                            />
+
+                            <path
+                                d="M0,170
+                                   C80,150 90,140 120,145
+                                   S180,120 220,125
+                                   S280,95 320,105
+                                   S380,80 420,90
+                                   S480,55 520,65
+                                   S570,35 600,45"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="4"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                </div>
+
+                <div class="months">
+                    <span>Apr</span>
+                    <span>May</span>
+                    <span>Jun</span>
+                    <span>Jul</span>
+                    <span>Aug</span>
+                    <span>Sep</span>
+                </div>
+
+            </div>
+
+
+            <!-- DEPARTMENT -->
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>Departments</h3>
+                        <p>Employees by department</p>
+                    </div>
+
+                    <button class="more-button">
+                        ⋮
+                    </button>
+
+                </div>
+
+                <div class="department-list">
+
+                    <div class="department">
+
+                        <div class="department-name">
+                            <span class="department-icon">💻</span>
+                            Engineering
+                        </div>
+
+                        <strong>42</strong>
+
+                        <div class="department-bar">
+                            <div style="width:82%"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="department">
+
+                        <div class="department-name">
+                            <span class="department-icon">📊</span>
+                            Finance
+                        </div>
+
+                        <strong>18</strong>
+
+                        <div class="department-bar">
+                            <div style="width:45%"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="department">
+
+                        <div class="department-name">
+                            <span class="department-icon">📣</span>
+                            Marketing
+                        </div>
+
+                        <strong>25</strong>
+
+                        <div class="department-bar">
+                            <div style="width:60%"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="department">
+
+                        <div class="department-name">
+                            <span class="department-icon">🤝</span>
+                            Human Resources
+                        </div>
+
+                        <strong>14</strong>
+
+                        <div class="department-bar">
+                            <div style="width:35%"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="department">
+
+                        <div class="department-name">
+                            <span class="department-icon">🎧</span>
+                            Support
+                        </div>
+
+                        <strong>29</strong>
+
+                        <div class="department-bar">
+                            <div style="width:68%"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EMPLOYEE TABLE -->
+        <div class="panel employee-panel">
+
+            <div class="panel-header employee-header">
+
+                <div>
+                    <h3>Recent Employees</h3>
+                    <p>Recently added employees</p>
+                </div>
+
+                <div class="table-actions">
+
+                    <div class="search-box">
+                        🔍
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search employees..."
+                        >
+                    </div>
+
+                    <select id="departmentFilter">
+
+                        <option value="all">
+                            All Departments
+                        </option>
+
+                        <option value="Engineering">
+                            Engineering
+                        </option>
+
+                        <option value="Finance">
+                            Finance
+                        </option>
+
+                        <option value="Marketing">
+                            Marketing
+                        </option>
+
+                        <option value="HR">
+                            HR
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>EMPLOYEE</th>
+                            <th>DEPARTMENT</th>
+                            <th>ROLE</th>
+                            <th>STATUS</th>
+                            <th>JOINED</th>
+                            <th>ACTION</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="employeeTable">
+
+                        <tr>
+
+                            <td>
+
+                                <div class="employee">
+
+                                    <div class="employee-avatar purple">
+                                        AS
+                                    </div>
+
+                                    <div>
+                                        <strong>Alex Smith</strong>
+                                        <span>alex@example.com</span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>Engineering</td>
+
+                            <td>DevOps Engineer</td>
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>Sep 20, 2026</td>
+
+                            <td>
+                                <button class="action-button">
+                                    ⋮
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="employee">
+
+                                    <div class="employee-avatar blue">
+                                        RJ
+                                    </div>
+
+                                    <div>
+                                        <strong>Rachel Jones</strong>
+                                        <span>rachel@example.com</span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>Marketing</td>
+
+                            <td>Marketing Manager</td>
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>Sep 18, 2026</td>
+
+                            <td>
+                                <button class="action-button">
+                                    ⋮
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="employee">
+
+                                    <div class="employee-avatar green">
+                                        MK
+                                    </div>
+
+                                    <div>
+                                        <strong>Michael Kumar</strong>
+                                        <span>michael@example.com</span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>Engineering</td>
+
+                            <td>Software Engineer</td>
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>Sep 15, 2026</td>
+
+                            <td>
+                                <button class="action-button">
+                                    ⋮
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="employee">
+
+                                    <div class="employee-avatar orange">
+                                        SP
+                                    </div>
+
+                                    <div>
+                                        <strong>Sarah Patel</strong>
+                                        <span>sarah@example.com</span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>Finance</td>
+
+                            <td>Financial Analyst</td>
+
+                            <td>
+                                <span class="status inactive">
+                                    On Leave
+                                </span>
+                            </td>
+
+                            <td>Sep 10, 2026</td>
+
+                            <td>
+                                <button class="action-button">
+                                    ⋮
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+```
+
+</div>
+
+<!-- ADD EMPLOYEE MODAL -->
+
+<div class="modal-overlay" id="employeeModal">
+
+```
+<div class="modal">
+
+    <div class="modal-header">
+
+        <div>
+            <h2>Add New Employee</h2>
+            <p>Add an employee to your organization</p>
+        </div>
+
+        <button class="close-button" id="closeModal">
+            ×
+        </button>
+
+    </div>
+
+
+    <form id="employeeForm">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>First Name</label>
+
+                <input
+                    type="text"
+                    id="firstName"
+                    placeholder="John"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Last Name</label>
+
+                <input
+                    type="text"
+                    id="lastName"
+                    placeholder="Doe"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="john@example.com"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Department</label>
+
+                <select id="department" required>
+
+                    <option value="">
+                        Select department
+                    </option>
+
+                    <option>
+                        Engineering
+                    </option>
+
+                    <option>
+                        Finance
+                    </option>
+
+                    <option>
+                        Marketing
+                    </option>
+
+                    <option>
+                        HR
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Job Role</label>
+
+                <input
+                    type="text"
+                    id="role"
+                    placeholder="DevOps Engineer"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Status</label>
+
+                <select id="status">
+
+                    <option value="Active">
+                        Active
+                    </option>
+
+                    <option value="On Leave">
+                        On Leave
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="secondary-button"
+                id="cancelModal"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="submit"
+                class="primary-button"
+            >
+                Add Employee
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+```
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
