@@ -1,4 +1,4 @@
-const API_URL = "http://13.63.166.164:5000";
+const API_URL = "http://13.61.144.254:5000";
 
 
 async function loadEmployees() {
